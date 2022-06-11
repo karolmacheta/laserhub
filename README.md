@@ -13,7 +13,7 @@ $ npm install
 ## Running the test:
 
 ```bash
-$ npm run cypress:open
+$ npm run test
 ```
 
 1. Select e2e tests
