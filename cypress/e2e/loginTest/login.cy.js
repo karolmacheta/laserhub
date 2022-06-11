@@ -1,4 +1,5 @@
 import { loginPage } from "../../locators/loginPage.js"
+import { testUser } from "../../fixtures/loginData.js"
 
 describe('Login to Laserhub', () => {
   beforeEach(() => {
@@ -12,21 +13,22 @@ describe('Login to Laserhub', () => {
   });
 
   it('tries to login with only Email', () => {
-    cy.typeInEmail('e.ioannidis+testing_worktask@laserhub.com');
+    cy.log(testUser.pass);
+    cy.typeInEmail(testUser.email);
     cy.clickSubmitBtn();
     cy.checkIfOnLoginPage();
     cy.log('Success - User cannot login withouth password');
   });
 
   it('tries to login with only Password', () => {
-    cy.typeInPass('l0vet3sting@');
+    cy.typeInPass(testUser.pass);
     cy.clickSubmitBtn();
     cy.checkIfOnLoginPage();
     cy.log('Success - User cannot login withouth email');
   });
 
   it('tries to login with wrong Password', () => {
-    cy.typeInEmail('e.ioannidis+testing_worktask@laserhub.com');
+    cy.typeInEmail(testUser.email);
     cy.typeInPass('fakePass');
     cy.clickSubmitBtn();
     cy.checkIfOnLoginPage();
@@ -35,15 +37,15 @@ describe('Login to Laserhub', () => {
 
   it('tries to login with wrong EMail', () => {
     cy.typeInEmail('test@abc.com');
-    cy.typeInPass('l0vet3sting@');
+    cy.typeInPass(testUser.pass);
     cy.clickSubmitBtn();
     cy.checkIfOnLoginPage();
     cy.log('Success - User cannot login with wrong email');
   });
 
   it('tries to login with correct Login and Password', () => {
-    cy.typeInEmail('e.ioannidis+testing_worktask@laserhub.com');
-    cy.typeInPass('l0vet3sting@');
+    cy.typeInEmail(testUser.email);
+    cy.typeInPass(testUser.pass);
     cy.clickSubmitBtn();
     cy.get(loginPage.loginForm).should('not.exist');
     cy.log('Success - User successfully logged in correct email and pass');
