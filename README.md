@@ -1,4 +1,4 @@
-# laserhub login test
+laserhub login test
 
 ## Cypress Documentation:
 
