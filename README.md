@@ -4,21 +4,21 @@ laserhub login test
 
 https://www.cypress.io/
 
-## Installation:
+# Installation:
 
-# Clone the repository:
+## Clone the repository:
 
 ```bash
 $ git clone https://github.com/karolmacheta/laserhub.git
 ```
-# Enter the folder and install npm
+## Enter the folder and install npm
 
 ```bash
 $ cd laserhub
 $ npm install
 ```
 
-## Running the test:
+# Running the test:
 
 ```bash
 $ npm run test
