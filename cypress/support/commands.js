@@ -15,11 +15,11 @@ Cypress.Commands.add('clickSubmitBtn', () => {
 })
 
 Cypress.Commands.add('typeInPass', (pass) => {
-    cy.get('#password').should('be.visible').type(pass);
+    cy.get(loginPage.passwordInput).should('be.visible').type(pass);
 })
 
 Cypress.Commands.add('typeInEmail', (email) => {
-    cy.get('#email').should('be.visible').type(email);
+    cy.get(loginPage.emailInput).should('be.visible').type(email);
 })
 
 Cypress.Commands.add('errorCheck', () => {
