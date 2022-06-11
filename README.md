@@ -13,8 +13,9 @@ $ npm install
 ## Running the test:
 
 ```bash
-$ npx cypress open
+$ npm run cypress:open
 ```
 
-Select e2e tests and start file:
-loginTest/login.cy.js
+1. Select e2e tests
+2. Select Google Chrome as the browser and start file:
+ loginTest/login.cy.js
