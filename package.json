@@ -1,0 +1,22 @@
+{
+  "name": "laserhub",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx run cypress"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karolmacheta/laserhub.git"
+  },
+  "author": "KarolMacheta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karolmacheta/laserhub/issues"
+  },
+  "homepage": "https://github.com/karolmacheta/laserhub#readme",
+  "devDependencies": {
+    "cypress": "^10.1.0"
+  }
+}
