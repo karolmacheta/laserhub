@@ -21,7 +21,7 @@ $ npm install
 # Running the test:
 
 ```bash
-$ npm run test
+$ npx cypress open
 ```
 
 1. Select e2e tests
