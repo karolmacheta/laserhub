@@ -1,25 +1,27 @@
-// ***********************************************
-// This example commands.js shows you how to
-// create various custom commands and overwrite
-// existing commands.
-//
-// For more comprehensive examples of custom
-// commands please read more here:
-// https://on.cypress.io/custom-commands
-// ***********************************************
-//
-//
-// -- This is a parent command --
-// Cypress.Commands.add('login', (email, password) => { ... })
-//
-//
-// -- This is a child command --
-// Cypress.Commands.add('drag', { prevSubject: 'element'}, (subject, options) => { ... })
-//
-//
-// -- This is a dual command --
-// Cypress.Commands.add('dismiss', { prevSubject: 'optional'}, (subject, options) => { ... })
-//
-//
-// -- This will overwrite an existing command --
-// Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+import { loginPage } from "../locators/loginPage.js"
+
+Cypress.Commands.add('openLoginPage', () => {
+    cy.visit('https://app.laserhub.com/login');
+    cy.get(loginPage.loginForm).should('be.visible');
+    cy.log('Succesfully opened login page');
+  })
+
+Cypress.Commands.add('checkIfOnLoginPage', () => {
+    cy.get(loginPage.loginForm).should('be.visible');
+})
+
+Cypress.Commands.add('clickSubmitBtn', () => {
+    cy.get(loginPage.submitBtn).should('be.visible').click();
+})
+
+Cypress.Commands.add('typeInPass', (pass) => {
+    cy.get('#password').should('be.visible').type(pass);
+})
+
+Cypress.Commands.add('typeInEmail', (email) => {
+    cy.get('#email').should('be.visible').type(email);
+})
+
+Cypress.Commands.add('errorCheck', () => {
+    cy.get(loginPage.alert).contains(' ERROR ').should('be.visible');
+})

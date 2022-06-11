@@ -1,47 +1,52 @@
+import { loginPage } from "../../locators/loginPage.js"
 
-describe('Google Search', () => {
+describe('Login to Laserhub', () => {
   beforeEach(() => {
-    cy.visit('https://app.laserhub.com/login');
-    cy.get('[data-label="login-form"]').should('be.visible');
-    cy.log('Succesfully opened the website');
+    cy.openLoginPage();
   })
 
   it('tries to login without credentials via submit', () => {
-    cy.get('[data-label="login-form"]').submit();
-    cy.get('[role="alert"]').contains(' ERROR ').should('be.visible');
+    cy.get(loginPage.loginForm).submit()
+    cy.errorCheck();
+    cy.log('Success - User cannot login withouth credentials');
   });
 
   it('tries to login with only Email', () => {
-    cy.get('#email').should('be.visible').type('e.ioannidis+testing_worktask@laserhub.com');
-    cy.get('button[type="submit"]').should('be.visible').click();
-    cy.get('[data-label="login-form"]').should('be.visible');
+    cy.typeInEmail('e.ioannidis+testing_worktask@laserhub.com');
+    cy.clickSubmitBtn();
+    cy.checkIfOnLoginPage();
+    cy.log('Success - User cannot login withouth password');
   });
 
   it('tries to login with only Password', () => {
-    cy.get('#password').should('be.visible').type('l0vet3sting@');
-    cy.get('button[type="submit"]').should('be.visible').click();
-    cy.get('[data-label="login-form"]').should('be.visible');
+    cy.typeInPass('l0vet3sting@');
+    cy.clickSubmitBtn();
+    cy.checkIfOnLoginPage();
+    cy.log('Success - User cannot login withouth email');
   });
 
   it('tries to login with wrong Password', () => {
-    cy.get('#email').should('be.visible').type('e.ioannidis+testing_worktask@laserhub.com');
-    cy.get('#password').should('be.visible').type('abc@wp.pl');
-    cy.get('button[type="submit"]').should('be.visible').click();
-    cy.get('[data-label="login-form"]').should('be.visible');
+    cy.typeInEmail('e.ioannidis+testing_worktask@laserhub.com');
+    cy.typeInPass('fakePass');
+    cy.clickSubmitBtn();
+    cy.checkIfOnLoginPage();
+    cy.log('Success - User cannot login with wrong password');
   });
 
   it('tries to login with wrong EMail', () => {
-    cy.get('#email').should('be.visible').type('test@abc.com');
-    cy.get('#password').should('be.visible').type('l0vet3sting@');
-    cy.get('button[type="submit"]').should('be.visible').click();
-    cy.get('[data-label="login-form"]').should('be.visible');
+    cy.typeInEmail('test@abc.com');
+    cy.typeInPass('l0vet3sting@');
+    cy.clickSubmitBtn();
+    cy.checkIfOnLoginPage();
+    cy.log('Success - User cannot login with wrong email');
   });
 
   it('tries to login with correct Login and Password', () => {
-    cy.get('#email').should('be.visible').type('e.ioannidis+testing_worktask@laserhub.com');
-    cy.get('#password').should('be.visible').type('l0vet3sting@');
-    cy.get('button[type="submit"]').should('be.visible').click();
-    cy.get('[data-label="login-form"]').should('not.exist');
+    cy.typeInEmail('e.ioannidis+testing_worktask@laserhub.com');
+    cy.typeInPass('l0vet3sting@');
+    cy.clickSubmitBtn();
+    cy.get(loginPage.loginForm).should('not.exist');
+    cy.log('Success - User successfully logged in correct email and pass');
   });
 
 });
