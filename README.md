@@ -6,7 +6,15 @@ https://www.cypress.io/
 
 ## Installation:
 
+# Clone the repository:
+
 ```bash
+$ git clone https://github.com/karolmacheta/laserhub.git
+```
+# Enter the folder and install npm
+
+```bash
+$ cd laserhub
 $ npm install
 ```
 
