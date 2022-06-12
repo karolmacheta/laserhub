@@ -1,4 +1,4 @@
-laserhub login test
+Tests for login to https://app.laserhub.com/login page
 
 ## Cypress Documentation:
 
