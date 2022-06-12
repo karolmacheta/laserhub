@@ -18,7 +18,7 @@ $ cd laserhub
 $ npm install
 ```
 
-## Running the test:
+# Running the test:
 
 ```bash
 $ npx cypress open
@@ -27,7 +27,7 @@ $ npx cypress open
 2. Select Google Chrome as the browser and start file:
  loginTest/login.cy.js
 
- # In case of issues with Cypress installation via npm
+## In case of issues with Cypress installation via npm
 
 
 1. Download cypress for desktop, extract the zip package
@@ -37,6 +37,7 @@ https://download.cypress.io/desktop
 4. Select Google Chrome as the browser and start file from repo:
  loginTest/login.cy.js
 
-// ![alt text](https://github.com/karolmacheta/laserhub/blob/main/tests.jpg)
+![alt text](https://github.com/karolmacheta/laserhub/blob/main/tests.jpg)
 
+## Video Playback of test
 https://github.com/karolmacheta/laserhub/blob/main/laserhub.mov
