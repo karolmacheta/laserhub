@@ -38,6 +38,3 @@ https://download.cypress.io/desktop
  loginTest/login.cy.js
 
 ![alt text](https://github.com/karolmacheta/laserhub/blob/main/tests.jpg)
-
-## Video Playback of test
-https://github.com/karolmacheta/laserhub/blob/main/laserhub.mov
