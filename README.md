@@ -37,5 +37,6 @@ https://download.cypress.io/desktop
 4. Select Google Chrome as the browser and start file from repo:
  loginTest/login.cy.js
 
-![alt text](https://github.com/karolmacheta/laserhub/blob/main/tests.jpg)
+// ![alt text](https://github.com/karolmacheta/laserhub/blob/main/tests.jpg)
 
+https://github.com/karolmacheta/laserhub/blob/main/laserhub.webm

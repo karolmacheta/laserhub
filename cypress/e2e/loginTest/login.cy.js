@@ -1,5 +1,4 @@
 import { loginPage } from "../../locators/loginPage.js"
-// import { testUser } from "../../fixtures/loginData.js"
 import testUser from "../../fixtures/User.json"
 
 describe('Login to Laserhub', () => {
