@@ -48,6 +48,7 @@ describe('Login to Laserhub', () => {
     cy.typeInPass(testUser.pass);
     cy.clickSubmitBtn();
     cy.get(loginPage.loginForm).should('not.exist');
+    cy.checkIfOnProductPage();
     cy.log('Success - User successfully logged in correct email and pass');
   });
 

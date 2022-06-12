@@ -25,3 +25,7 @@ Cypress.Commands.add('typeInEmail', (email) => {
 Cypress.Commands.add('errorCheck', () => {
     cy.get(loginPage.alert).contains(' ERROR ').should('be.visible');
 })
+
+Cypress.Commands.add('checkIfOnProductPage', () => {
+cy.url().should('eq', 'https://app.laserhub.com/product');
+})
