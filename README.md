@@ -29,7 +29,9 @@ $ npx cypress open
 
  # In case of issues with Cypress installation via npm
 
+
 1. Download cypress for desktop, extract the zip package
+https://download.cypress.io/desktop
 2. Run Cypress.exe and
 3. Select e2e tests
 4. Select Google Chrome as the browser and start file from repo:
