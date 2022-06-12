@@ -39,4 +39,4 @@ https://download.cypress.io/desktop
 
 // ![alt text](https://github.com/karolmacheta/laserhub/blob/main/tests.jpg)
 
-https://github.com/karolmacheta/laserhub/blob/main/laserhub.webm
+https://github.com/karolmacheta/laserhub/blob/main/laserhub.mov
