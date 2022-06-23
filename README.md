@@ -27,14 +27,4 @@ $ npx cypress open
 2. Select Google Chrome as the browser and start file:
  loginTest/login.cy.js
 
-## In case of issues with Cypress installation via npm
-
-
-1. Download cypress for desktop, extract the zip package
-https://download.cypress.io/desktop
-2. Run Cypress.exe and
-3. Select e2e tests
-4. Select Google Chrome as the browser and start file from repo:
- loginTest/login.cy.js
-
 ![alt text](https://github.com/karolmacheta/laserhub/blob/main/tests.jpg)
